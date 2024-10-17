@@ -10,7 +10,9 @@ const App: React.FC = () => {
 
   const handleLogin = (email: string) => {
     // Set authentication state
-    setIsAuthenticated(true);
+    if(email){
+      setIsAuthenticated(true);
+    }
   };
   return (
     <Router>

@@ -12,7 +12,8 @@ const { email } = location.state as LocationState;
 
   return (
     <div className="dashboard-container">
-      <h1>Welcome to the HomePage!, {email}</h1>
+      <h1>Welcome to the HomePage!</h1>
+      <h2>{email}</h2>
     </div>
   );
 };
