@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 
-const Login: React.FC = () => {
+const Login: React.FC<{onLogin: (email: string) => void}> = ({onLogin}) => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [showPassword, setShowPassword] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
   const navigate = useNavigate();
 
@@ -30,7 +31,7 @@ const Login: React.FC = () => {
     }
 
    // login successfully
-  //  navigate('/dashboard');
+   onLogin(email);
    navigate('/dashboard', { state: { email } });
   };
 
@@ -47,14 +48,17 @@ const Login: React.FC = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div>
+        <div className="password-field">
           <label htmlFor="password">Password</label>
           <input
             id="password"
-            type="password"
+            type={showPassword ? 'text' : 'password'}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <span className="eye-icon" onClick={() => setShowPassword(!showPassword)}>
+            {showPassword ? '🙈' : '👁️'}
+          </span>
         </div>
         {error && <div className="error">{error}</div>}
         <button type="submit">Login</button>

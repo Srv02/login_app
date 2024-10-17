@@ -19,10 +19,21 @@
 }
 
 input {
-  width: 100%;
+  width: 95%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.password-field {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 47%;
+  cursor: pointer;
 }
 
 button {
