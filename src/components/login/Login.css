@@ -5,13 +5,20 @@
   justify-content: center;
   height: 100vh;
   padding: 20px;
+  background-color: #f4f4f4;
+  box-sizing: border-box; 
 }
 
 .login-form {
   width: 100%;
-  max-width: 400px;
+  max-width: 400px; 
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  box-sizing: border-box; 
 }
 
 .login-form div {
@@ -19,10 +26,12 @@
 }
 
 input {
-  width: 95%;
-  padding: 10px;
+  width: 100%;
+  padding: 12px; 
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 16px; 
+  box-sizing: border-box; 
 }
 
 .password-field {
@@ -37,12 +46,14 @@ input {
 }
 
 button {
-  padding: 10px;
+  padding: 12px;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px; 
 }
 
 button:hover {
@@ -54,26 +65,83 @@ button:hover {
   font-size: 0.8em;
 }
 
-@media screen and (max-width: 768px) {
+/* Media Queries */
+
+/* Tablet Devices (768px and below) */
+@media (max-width: 768px) {
   .login-container {
-    padding: 10px;
+    padding: 15px;
   }
-  input,
-  button {
-    font-size: 14px;
+
+  .login-form {
+    width: 90%;
+    max-width: 500px; 
+  }
+
+  input, button {
+    font-size: 16px;
+    padding: 14px;
   }
 }
 
-@media screen and (max-width: 480px) {
+/* Mobile Devices (480px and below) */
+@media (max-width: 480px) {
   .login-container {
-    padding: 5px;
+    padding: 10px;
   }
-  input,
-  button {
-    font-size: 12px;
+
+  .login-form {
+    width: 90%; 
+  }
+
+  input, button {
+    font-size: 14px;
+    padding: 12px; 
   }
 
   h2 {
-    font-size: 1.5em;
+    font-size: 1.5em; 
+  }
+}
+
+/* Large Mobile Devices and Small Tablets (between 481px and 1024px) */
+@media  (min-width: 481px) and (max-width: 1024px) {
+  .login-container {
+    padding: 15px;
+  }
+
+  .login-form {
+    width: 90%;
+    max-width: 600px; 
+  }
+
+  input, button {
+    font-size: 16px;
+    padding: 14px; 
+  }
+
+  h2 {
+    font-size: 2em; 
+  }
+}
+
+/* Laptops (1024px and above) */
+@media (min-width: 1024px) {
+  .login-container {
+    padding: 20px;
+  }
+
+  .login-form {
+    width: 50%; 
+    max-width: 600px; 
+  }
+
+  input, button {
+    font-size: 18px; 
+    padding: 16px; 
+  }
+
+  h2 {
+    font-size: 2.5em; 
   }
 }
